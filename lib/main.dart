@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/home_screen.dart';
+import 'package:news_app/them_app/them_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: const HomeScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: Apptheme.Lightmode,
+      initialRoute: HomeScreen.routeName,
+      routes: {HomeScreen.routeName: (context) => HomeScreen()},
+    );
   }
 }
